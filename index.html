@@ -3,154 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi359.9</title> 
+    <title>Multi359.9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root{
+        :root {
             --primary: #0a0a23;
             --secondary: #1e1e2f;
             --accent: #4fc3f7;
             --bg: #f9f9f9;
             --text: #333;
+            --text-dark: #222;
+            --divider: #e0e0e0;
+            --button-hover: #018cbd;
+            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(145deg, #0a0a23, #1e1e2f);
         }
-        *{
+
+        * {
             margin: 0;
-            padding: 0%;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'segoe UI', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
         }
 
-        header{
-            background: var(--primary);
+        header {
+            background-color: var(--primary);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--box-shadow);
         }
 
-        nav{
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+            background-image: url('https://uploadthing.com/f/18732549-e563-451a-b74b-4cb3c3fcb3b3-ai-head-logo-multi359-9.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-blend-mode: lighten;
+            opacity: 0.95;
+            border-radius: 15px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        nav {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 25px;
             background: var(--secondary);
-            padding: 10px;
+            padding: 12px;
+            box-shadow: var(--box-shadow);
+            border-radius: 8px;
+            margin-top: -30px;
         }
 
         nav a {
             text-decoration: none;
             color: white;
             background-color: #333;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 12px 25px;
+            border-radius: 30px;
             font-size: 16px;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         nav a:hover {
-            background-color: #4fc3f7;
+            background-color: var(--accent);
             color: #333;
             transform: scale(1.05);
         }
 
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                margin-bottom: 10px;
-            }
-        }
-
         section {
             padding: 40px 20px;
-            max-width: 1000px;
+            max-width: 1100px;
+            margin: auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        section h2 {
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 500;
+            position: relative;
+            top: -20px;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: var(--divider);
+            margin: 40px 0;
+        }
+
+        .produto {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .produto:hover {
+            transform: translateY(-3px);
+        }
+
+        .chatbox {
+            background: white;
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            border-radius: 15px;
+            max-width: 600px;
             margin: auto;
         }
 
-        h2{
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .produto{
-            background: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 5px solid var(--accent);
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-
-        input, textarea, button{
+        input, textarea, button {
             width: 100%;
-            padding: 10px;
-            margin-top: 10px;
+            padding: 15px;
+            margin-top: 15px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, button:focus {
+            border-color: var(--accent);
+            outline: none;
         }
 
         button {
-            background-color: #02a9f4;
+            background-color: var(--accent);
             color: white;
-            padding: 12px 20px;
+            padding: 15px 25px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         button:hover {
-            background-color: #018cbd;
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
         }
 
-        footer{
+        footer {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 15px
-        }
-
-        .chatbox{
-            background: white;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
+            font-size: 1rem;
+            border-radius: 20px 20px 0 0;
         }
 
-        .chatbox p {
-            margin: 10px 0;
+        footer p {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .chatbox {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            nav a {
+                padding: 12px 18px;
+            }
+
+            section {
+                padding: 15px;
+            }
+        }
+
+        #chatbot, #contato {
+            transition: none !important;
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Multi359.9</h1>
         <p>Integrações inteligentes com chatbots e I.A</p>
     </header>
 
     <nav>
-        <a href="#home">home</a>
+        <a href="#home">Home</a>
         <a href="#sobre">Sobre I.A</a>
         <a href="#integracoes">Integrações</a>
         <a href="#produtos">Produtos</a>
-        <a href="#chatbot">chatbot</a>
+        <a href="#chatbot">Chatbot</a>
         <a href="#contato">Contato</a>    
     </nav>
 
     <section id="home">
-        <h2>Bem-vindo a Multi359.9</h2>
+        <h2>Bem-vindo à Multi359.9</h2>
         <p>Oferecemos soluções modernas de integração com Inteligência Artificial e Chatbots, para atender da melhor maneira possível os seus clientes.</p>
     </section>
+
+    <div class="divider"></div>
 
     <section id="sobre">
         <h2>O que é Inteligência Artificial?</h2>
         <p>Inteligência artificial (IA) é uma tecnologia que permite que máquinas aprendam, raciocinem e tomem decisões de forma similar à humana.</p>
     </section>
+
+    <div class="divider"></div>
 
     <section id="integracoes">
         <h2>Integrações com Chatbots</h2>
@@ -162,14 +263,16 @@
         </ul>
     </section>
 
+    <div class="divider"></div>
+
     <section id="produtos">
-        <h2>Produtos e soluções</h2>
+        <h2>Produtos e Soluções</h2>
         <div class="produto">
             <h3>Bot para IA no Whatsapp</h3>
             <p>Automatize atendimentos via WhatsApp utilizando fluxos dinâmicos e integração JSON com IA.</p>
         </div>
         <div class="produto">
-            <h3>Chatbot para sites</h3>
+            <h3>Chatbot para Sites</h3>
             <p>Widget de chatbot inteligente com base em JavaScript, treinado com perguntas frequentes e conexão a APIs externas.</p>
         </div>
         <div class="produto">
@@ -178,27 +281,31 @@
         </div>
     </section>
 
+    <div class="divider"></div>
+
     <section id="chatbot">
         <h2>Chatbot Multi359.9</h2>
         <div class="chatbox">
-            <input type="text" id="userInput" placeholder="Você acha que a I.A é importante?">
+            <input type="text" id="userInput" placeholder="Você acha que a I.A é importante?" />
             <button onclick="responder()">Enviar</button>
             <p id="respostaBit"></p>
         </div>
     </section>
 
+    <div class="divider"></div>
+
     <section id="contato">
         <h2>Fale Conosco</h2>
         <form>
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu email" required>
+            <input type="text" placeholder="Seu nome" required />
+            <input type="email" placeholder="Seu email" required />
             <textarea rows="4" placeholder="Escreva aqui"></textarea>
             <button type="submit">Enviar</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy;2025 multi359.9 - todos os direitos reservados</p>
+        <p>&copy;2025 Multi359.9 - Todos os direitos reservados</p>
     </footer>
 
     <script>
@@ -223,5 +330,6 @@
             }
         }
     </script>
+
 </body>
 </html>
